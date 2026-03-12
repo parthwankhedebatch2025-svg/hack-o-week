@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Blog</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #ffd700;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.blog-card {
+  position: relative;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.blog-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.blog-card:hover .blog-image {
+  transform: scale(1.05);
+}
+
+.blog-content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-content h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 20px;
+}
+
+.blog-content p {
+  margin: 0 0 10px 0;
+  color: #555;
+  font-size: 15px;
+}
+
+.blog-tags {
+  margin-bottom: 10px;
+}
+
+.blog-tags span {
+  background: #4facfe;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.read-more {
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background 0.3s;
+  text-decoration: none;
+  text-align: center;
+  align-self: start;
+}
+
+.read-more:hover {
+  background: linear-gradient(90deg, #0077ff, #00c3ff);
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer a {
+  color: #4facfe;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #00f2fe;
+}
+
+@media (max-width: 600px) {
+  .blog-image {
+    height: 180px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  Wanderlust Travel Blog
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Destinations</a>
+    <a href="#">Travel Tips</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <!-- Blog Post 1 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1018/600/400" class="blog-image" alt="Beach Paradise">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Beach</span><span>Summer</span></div>
+      <h3>Top 10 Beaches to Visit This Summer</h3>
+      <p>Discover the most breathtaking beaches around the world for your next getaway.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 2 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1020/600/400" class="blog-image" alt="Mountain Hiking">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Adventure</span><span>Mountain</span></div>
+      <h3>Hiking the Majestic Mountains</h3>
+      <p>Essential tips and tricks to enjoy safe and unforgettable mountain hikes.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 3 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1024/600/400" class="blog-image" alt="City Exploration">
+    <div class="blog-content">
+      <div class="blog-tags"><span>City</span><span>Urban</span></div>
+      <h3>Hidden Gems in Major Cities</h3>
+      <p>Uncover hidden spots and unique experiences in popular urban destinations.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 4 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1035/600/400" class="blog-image" alt="Local Festivals">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Culture</span><span>Festival</span></div>
+      <h3>Experience Local Festivals Worldwide</h3>
+      <p>Immerse yourself in authentic cultural experiences at local festivals worldwide.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 5 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1042/600/400" class="blog-image" alt="Wildlife Safari">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Wildlife</span><span>Adventure</span></div>
+      <h3>Top Destinations for Wildlife Safaris</h3>
+      <p>Get close to nature with unforgettable wildlife safaris and eco-tours.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 6 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1050/600/400" class="blog-image" alt="Desert Adventure">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Desert</span><span>Adventure</span></div>
+      <h3>Thrilling Desert Adventures</h3>
+      <p>Experience desert landscapes through camel rides, sandboarding, and stargazing nights.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 7 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1060/600/400" class="blog-image" alt="Tropical Islands">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Island</span><span>Relaxation</span></div>
+      <h3>Exploring Tropical Islands</h3>
+      <p>Discover the hidden tropical islands perfect for relaxation and adventure.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 8 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1065/600/400" class="blog-image" alt="European Cities">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Europe</span><span>City</span></div>
+      <h3>Must-Visit Cities in Europe</h3>
+      <p>Explore the iconic and charming cities of Europe with tips and travel guides.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 9 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1070/600/400" class="blog-image" alt="National Parks">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Nature</span><span>Park</span></div>
+      <h3>Top National Parks to Explore</h3>
+      <p>Experience the beauty of nature by visiting the world's most famous national parks.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 10 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1080/600/400" class="blog-image" alt="Road Trip">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Adventure</span><span>Road Trip</span></div>
+      <h3>Epic Road Trips Across Continents</h3>
+      <p>Plan your ultimate road trip with scenic routes, stops, and tips for the journey.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 11 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1085/600/400" class="blog-image" alt="Cultural Landmarks">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Culture</span><span>Landmark</span></div>
+      <h3>Famous Cultural Landmarks to Visit</h3>
+      <p>Explore historical and iconic cultural landmarks that define cities and countries.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+  <!-- Blog Post 12 -->
+  <div class="blog-card">
+    <img src="https://picsum.photos/id/1090/600/400" class="blog-image" alt="Adventure Sports">
+    <div class="blog-content">
+      <div class="blog-tags"><span>Adventure</span><span>Sports</span></div>
+      <h3>Adventure Sports Around the World</h3>
+      <p>Experience thrilling adventure sports from skydiving to scuba diving worldwide.</p>
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Wanderlust Travel Blog | Follow us: 
+  <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+</footer>
+
+</body>
+</html>
