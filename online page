@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Product Listing</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #4facfe;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-details h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.product-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.price {
+  font-weight: bold;
+  color: #4facfe;
+  font-size: 18px;
+}
+
+button {
+  background-color: #4facfe;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0077ff;
+}
+
+@media (max-width: 600px) {
+  .product-image {
+    height: 180px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>My Online Store</header>
+
+<div class="container">
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1011/400/300" class="product-image" alt="Wireless Headphones">
+    <div class="product-details">
+      <h3>Wireless Headphones</h3>
+      <p>High-quality sound with noise cancellation.</p>
+      <p class="price">$79.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1015/400/300" class="product-image" alt="Smart Watch">
+    <div class="product-details">
+      <h3>Smart Watch</h3>
+      <p>Track your fitness, notifications, and more.</p>
+      <p class="price">$149.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1025/400/300" class="product-image" alt="Bluetooth Speaker">
+    <div class="product-details">
+      <h3>Bluetooth Speaker</h3>
+      <p>Portable and powerful speaker for music lovers.</p>
+      <p class="price">$59.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1033/400/300" class="product-image" alt="Gaming Mouse">
+    <div class="product-details">
+      <h3>Gaming Mouse</h3>
+      <p>Ergonomic design with customizable RGB lighting.</p>
+      <p class="price">$49.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1040/400/300" class="product-image" alt="4K Action Camera">
+    <div class="product-details">
+      <h3>4K Action Camera</h3>
+      <p>Capture your adventures in ultra HD.</p>
+      <p class="price">$199.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1052/400/300" class="product-image" alt="Fitness Tracker">
+    <div class="product-details">
+      <h3>Fitness Tracker</h3>
+      <p>Monitor your daily activity and heart rate.</p>
+      <p class="price">$39.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Additional Products -->
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1060/400/300" class="product-image" alt="Laptop Stand">
+    <div class="product-details">
+      <h3>Laptop Stand</h3>
+      <p>Ergonomic adjustable aluminum laptop stand.</p>
+      <p class="price">$29.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1065/400/300" class="product-image" alt="Portable Charger">
+    <div class="product-details">
+      <h3>Portable Charger</h3>
+      <p>High-capacity power bank for all devices.</p>
+      <p class="price">$24.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1070/400/300" class="product-image" alt="LED Desk Lamp">
+    <div class="product-details">
+      <h3>LED Desk Lamp</h3>
+      <p>Adjustable brightness with touch control.</p>
+      <p class="price">$34.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1080/400/300" class="product-image" alt="Noise Cancelling Earbuds">
+    <div class="product-details">
+      <h3>Noise Cancelling Earbuds</h3>
+      <p>Compact design with superior sound quality.</p>
+      <p class="price">$69.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1085/400/300" class="product-image" alt="Smart Thermostat">
+    <div class="product-details">
+      <h3>Smart Thermostat</h3>
+      <p>Control your home temperature remotely.</p>
+      <p class="price">$129.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <img src="https://picsum.photos/id/1090/400/300" class="product-image" alt="VR Headset">
+    <div class="product-details">
+      <h3>VR Headset</h3>
+      <p>Immersive virtual reality experience.</p>
+      <p class="price">$299.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
