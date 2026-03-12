@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Store</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+
+/* Header */
+header {
+    background-color: #111;
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #4CAF50;
+}
+
+/* Product Section */
+.products {
+    padding: 40px 50px;
+}
+
+.products h2 {
+    margin-bottom: 25px;
+}
+
+/* Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin: 10px 0 5px;
+}
+
+.price {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>My Online Store</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Cart</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="products">
+<h2>Featured Products</h2>
+
+<div class="product-grid">
+
+<!-- 20 Products -->
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p1/300/200">
+<h3>Wireless Headphones</h3>
+<p class="price">$59.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p2/300/200">
+<h3>Smart Watch</h3>
+<p class="price">$89.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p3/300/200">
+<h3>Bluetooth Speaker</h3>
+<p class="price">$39.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p4/300/200">
+<h3>Gaming Mouse</h3>
+<p class="price">$29.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p5/300/200">
+<h3>Laptop Backpack</h3>
+<p class="price">$49.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p6/300/200">
+<h3>Fitness Band</h3>
+<p class="price">$34.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p7/300/200">
+<h3>Digital Camera</h3>
+<p class="price">$249.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p8/300/200">
+<h3>LED Monitor</h3>
+<p class="price">$179.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p9/300/200">
+<h3>Portable SSD</h3>
+<p class="price">$99.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p10/300/200">
+<h3>Keyboard & Mouse Combo</h3>
+<p class="price">$44.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p11/300/200">
+<h3>Noise Cancelling Earbuds</h3>
+<p class="price">$69.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p12/300/200">
+<h3>Tablet Device</h3>
+<p class="price">$199.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p13/300/200">
+<h3>VR Headset</h3>
+<p class="price">$149.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p14/300/200">
+<h3>Smartphone</h3>
+<p class="price">$499.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p15/300/200">
+<h3>Power Bank</h3>
+<p class="price">$24.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p16/300/200">
+<h3>Action Camera</h3>
+<p class="price">$129.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p17/300/200">
+<h3>Desk Lamp</h3>
+<p class="price">$19.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p18/300/200">
+<h3>Gaming Chair</h3>
+<p class="price">$229.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p19/300/200">
+<h3>Smart Home Hub</h3>
+<p class="price">$119.99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="https://picsum.photos/seed/p20/300/200">
+<h3>Wireless Charger</h3>
+<p class="price">$27.99</p>
+<button>Add to Cart</button>
+</div>
+
+</div>
+</section>
+
+</body>
+</html>
