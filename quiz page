@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advanced Quiz App</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:white;
+}
+
+.quiz-container{
+  width:650px;
+  padding:35px;
+  border-radius:20px;
+  background:rgba(0,0,0,0.05);
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+  color:#333;
+  text-align:center;
+}
+
+h1{
+  margin-bottom:5px;
+}
+
+.info{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+  font-size:14px;
+}
+
+.progress{
+  height:10px;
+  background:#ddd;
+  border-radius:5px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+.progress-bar{
+  height:10px;
+  width:0%;
+  background:#4facfe;
+  transition:0.3s;
+}
+
+.question{
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.option{
+  background:#f2f2f2;
+  padding:12px;
+  margin:10px 0;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.option:hover{
+  background:#e0e0e0;
+}
+
+.correct{
+  background:#4CAF50 !important;
+  color:white;
+}
+
+.wrong{
+  background:#e74c3c !important;
+  color:white;
+}
+
+button{
+  margin:10px 5px 0 5px;
+  padding:10px 25px;
+  border:none;
+  border-radius:10px;
+  background:#4facfe;
+  font-size:16px;
+  cursor:pointer;
+  color:white;
+}
+
+button:hover{
+  background:#0077ff;
+}
+
+.result{
+  font-size:22px;
+  margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-container">
+
+<h1>Advanced Quiz</h1>
+
+<div class="info">
+  <div id="questionNumber"></div>
+  <div>Time: <span id="timer">15</span>s</div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div class="question" id="question"></div>
+
+<div id="options"></div>
+
+<div>
+  <button onclick="prevQuestion()">Previous</button>
+  <button onclick="nextQuestion()">Next</button>
+  <button onclick="restartQuiz()">Restart</button>
+</div>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script>
+let quiz=[
+{q:"What does HTML stand for?",o:["Hyper Text Markup Language","High Tech Machine Language","Hyper Transfer Mark Language","Home Tool Markup Language"],a:0},
+{q:"Which language styles web pages?",o:["HTML","CSS","Python","Java"],a:1},
+{q:"Which language adds interactivity?",o:["HTML","CSS","JavaScript","C++"],a:2},
+{q:"Which tag creates a link?",o:["<a>","<link>","<url>","<href>"],a:0},
+{q:"Which tag inserts image?",o:["<img>","<image>","<src>","<pic>"],a:0},
+{q:"Which CSS property changes text color?",o:["font-color","color","text-color","background"],a:1},
+{q:"Which HTML tag creates paragraph?",o:["<p>","<para>","<text>","<pg>"],a:0},
+{q:"Who developed JavaScript?",o:["Google","Microsoft","Netscape","IBM"],a:2},
+{q:"Which symbol selects id in CSS?",o:["#",".","*","@"],a:0},
+{q:"Which tag creates unordered list?",o:["<ul>","<ol>","<list>","<li>"],a:0},
+{q:"Which method prints to console?",o:["console.log()","print()","echo()","log.console()"],a:0},
+{q:"Which tag makes bold text?",o:["<bold>","<b>","<strong>","Both B and C"],a:3},
+{q:"Which CSS property changes font size?",o:["font-style","size","font-size","text-size"],a:2},
+{q:"Which tag creates table row?",o:["<td>","<tr>","<row>","<th>"],a:1},
+{q:"Largest heading tag?",o:["<h1>","<h6>","<heading>","<head>"],a:0},
+{q:"Which HTML tag adds a line break?",o:["<break>","<br>","<lb>","<ln>"],a:1},
+{q:"Which attribute opens link in new tab?",o:["target='_blank'","newtab='yes'","open='_new'","target='new'"],a:0}
+];
+
+let current=0;
+let score=0;
+let selected=-1;
+let time=15;
+let timer;
+let answers=new Array(quiz.length).fill(null);
+
+function loadQuestion(){
+  clearInterval(timer);
+  time=15;
+  document.getElementById("timer").innerText=time;
+
+  let q=quiz[current];
+  document.getElementById("questionNumber").innerText="Question "+(current+1)+" / "+quiz.length;
+  document.getElementById("question").innerText=q.q;
+
+  let html="";
+  q.o.forEach((opt,i)=>{
+    let cls="";
+    if(answers[current]!==null){
+      cls = (i===q.a) ? "correct" : "";
+      if(i===answers[current] && i!==q.a) cls="wrong";
+    }
+    html+=`<div class="option ${cls}" onclick="selectOption(this,${i})">${opt}</div>`;
+  });
+
+  document.getElementById("options").innerHTML=html;
+  document.getElementById("progressBar").style.width=(current/quiz.length)*100+"%";
+
+  selected=answers[current];
+
+  timer=setInterval(()=>{
+    time--;
+    document.getElementById("timer").innerText=time;
+    if(time<=0){
+      clearInterval(timer);
+      nextQuestion();
+    }
+  },1000);
+}
+
+function selectOption(el,index){
+  selected=index;
+  answers[current]=index;
+
+  let options=document.querySelectorAll(".option");
+  options.forEach(o=>o.classList.remove("correct","wrong"));
+
+  if(index===quiz[current].a){
+    el.classList.add("correct");
+  }else{
+    el.classList.add("wrong");
+    options[quiz[current].a].classList.add("correct");
+  }
+}
+
+function nextQuestion(){
+  if(selected===quiz[current].a) score++;
+  current++;
+  if(current>=quiz.length){
+    showResult();
+  } else {
+    loadQuestion();
+  }
+}
+
+function prevQuestion(){
+  if(current>0){
+    current--;
+    loadQuestion();
+  }
+}
+
+function restartQuiz(){
+  current=0;
+  score=0;
+  selected=-1;
+  answers=new Array(quiz.length).fill(null);
+  loadQuestion();
+}
+
+function showResult(){
+  clearInterval(timer);
+  let finalScore=0;
+  answers.forEach((ans,i)=>{
+    if(ans===quiz[i].a) finalScore++;
+  });
+  let percent=Math.round((finalScore/quiz.length)*100);
+  document.querySelector(".quiz-container").innerHTML=
+    `<h1>Quiz Completed 🎉</h1>
+    <div class="result">Score: ${finalScore}/${quiz.length}</div>
+    <div class="result">Percentage: ${percent}%</div>
+    <button onclick="restartQuiz()">Restart Quiz</button>`;
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
