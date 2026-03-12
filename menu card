@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scoop & Swirl Café Menu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        color: #f5efe6;
+
+        /* improved visible background */
+        background-image:
+            linear-gradient(
+                to bottom,
+                rgba(30,18,12,0.45),
+                rgba(30,18,12,0.65)
+            ),
+            url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1800&q=80");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    /* subtle vignette for aesthetic depth */
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.06),
+            rgba(0,0,0,0.45)
+        );
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .menu-container {
+        max-width: 1100px;
+        margin: 60px auto;
+        padding: 50px;
+        background: rgba(58, 35, 24, 0.78);
+        backdrop-filter: blur(6px);
+        border-radius: 28px;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+        text-align: center;
+        font-family: 'Playfair Display', serif;
+        font-size: 3.8em;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+        color: #f3d2b3;
+    }
+
+    p.tagline {
+        text-align: center;
+        color: #d6b59c;
+        font-style: italic;
+        letter-spacing: 2px;
+        margin-bottom: 60px;
+    }
+
+    .section {
+        margin-bottom: 70px;
+    }
+
+    .section h2 {
+        font-family: 'Playfair Display', serif;
+        color: #e6c7a2;
+        font-size: 2.2em;
+        margin-bottom: 30px;
+        border-bottom: 2px solid rgba(255,255,255,0.15);
+        padding-bottom: 10px;
+    }
+
+    .items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+    }
+
+    .item-card {
+        background: #4b2e23;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .item-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+    }
+
+    .item-card img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        filter: brightness(0.9);
+    }
+
+    .item-info {
+        padding: 18px;
+        text-align: center;
+    }
+
+    .item-info h3 {
+        margin: 8px 0 6px;
+        font-size: 1.35em;
+        color: #f5efe6;
+    }
+
+    .item-info p {
+        font-size: 0.95em;
+        color: #d6b59c;
+        margin: 6px 0;
+    }
+
+    .item-info span {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: #c7a17a;
+        color: #2b1b14;
+        font-weight: 700;
+        font-size: 1em;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 60px;
+        font-size: 0.95em;
+        color: #d6b59c;
+        letter-spacing: 2px;
+    }
+
+    @media(max-width: 600px){
+        h1 {
+            font-size: 2.6em;
+        }
+        .menu-container {
+            padding: 30px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="menu-container">
+    <h1>Scoop & Swirl Café</h1>
+    <p class="tagline">New York Inspired • Warm • Sweet • Cozy</p>
+
+    <!-- Ice Cream -->
+    <div class="section">
+        <h2>Classic Ice Cream</h2>
+        <div class="items">
+            <div class="item-card">
+                <img src="C:\Users\sit.lab7\Desktop\images\vanilla bean.jpg.jpg">
+                <div class="item-info">
+                    <h3>Vanilla Bean</h3>
+                    <p>Classic, smooth & creamy</p>
+                    <span>₹150</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="C:\Users\sit.lab7\Desktop\images\chocolate fudge.jpg">
+                <div class="item-info">
+                    <h3>Chocolate Fudge</h3>
+                    <p>Rich & indulgent cocoa</p>
+                    <span>₹180</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="C:\Users\sit.lab7\Desktop\images\strwa.jpg">
+                <div class="item-info">
+                    <h3>Strawberry Swirl</h3>
+                    <p>Fresh berries & cream</p>
+                    <span>₹160</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="C:\Users\sit.lab7\Desktop\images\mintchocochip.jpg">
+                <div class="item-info">
+                    <h3>Mint Choco Chip</h3>
+                    <p>Cool mint & dark chocolate</p>
+                    <span>₹170</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Waffles -->
+    <div class="section">
+        <h2>Signature Waffles</h2>
+        <div class="items">
+            <div class="item-card">
+                <img src="C:\Users\sit.lab7\Desktop\images\classicwaffle.jpg">
+                <div class="item-info">
+                    <h3>Classic Waffle</h3>
+                    <p>Golden & crispy</p>
+                    <span>₹180</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="C:\Users\sit.lab7\Desktop\images\white.jpg">
+                <div class="item-info">
+                    <h3>Chocolate Drizzle</h3>
+                    <p>Warm waffle, dark chocolate</p>
+                    <span>₹220</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="C:\Users\sit.lab7\Desktop\images\strawberryndcream.jpg">
+                <div class="item-info">
+                    <h3>Strawberry & Cream</h3>
+                    <p>Fresh fruit & whipped cream</p>
+                    <span>₹250</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <img src="C:\Users\sit.lab7\Desktop\images\bananasplit.jpg">
+                <div class="item-info">
+                    <h3>Banana Split</h3>
+                    <p>Ice cream, banana & syrup</p>
+                    <span>₹280</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coffee & Shakes -->
+    <div class="section">
+        <h2>Coffee & Shakes</h2>
+        <div class="items">
+            <div class="item-card">
+                <div class="item-info">
+                    <h3>Classic Cappuccino</h3>
+                    <p>Espresso with steamed milk & foam</p>
+                    <span>₹180</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-info">
+                    <h3>Mocha Latte</h3>
+                    <p>Chocolate infused espresso delight</p>
+                    <span>₹210</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-info">
+                    <h3>Cold Coffee Shake</h3>
+                    <p>Chilled, creamy & refreshing</p>
+                    <span>₹220</span>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <div class="item-info">
+                    <h3>Chocolate Milkshake</h3>
+                    <p>Rich cocoa blended with ice cream</p>
+                    <span>₹240</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        @Scoop & Swirl • Open Daily 10 AM – 10 PM
+    </div>
+</div>
+
+</body>
+</html>
